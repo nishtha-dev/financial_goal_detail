@@ -1,22 +1,8 @@
-enum CriteriaType { text, variable }
+enum GoalDetailsDataStatus { initial, loading, success, failure }
 
-enum VariableType { value, indicator }
-
-enum ApiStatus { initial, loading, success, failure }
-
-extension ApiStatusX on ApiStatus {
-  bool get isInitial => this == ApiStatus.initial;
-  bool get isLoading => this == ApiStatus.loading;
-  bool get isSuccess => this == ApiStatus.success;
-  bool get isFailure => this == ApiStatus.failure;
-}
-
-extension CriteriaTypeX on CriteriaType {
-  bool get isText => this == CriteriaType.text;
-  bool get isVariable => this == CriteriaType.variable;
-}
-
-extension VariableTypeX on VariableType {
-  bool get isIndicator => this == VariableType.indicator;
-  bool get isValue => this == VariableType.value;
+extension GoalDetailsDataStatusX on GoalDetailsDataStatus {
+  bool get isInitial => this == GoalDetailsDataStatus.initial;
+  bool get isLoading => this == GoalDetailsDataStatus.loading;
+  bool get isSuccess => this == GoalDetailsDataStatus.success;
+  bool get isFailure => this == GoalDetailsDataStatus.failure;
 }
