@@ -3,14 +3,14 @@ import 'package:financial_goal_detail/src/core/theme/app_style_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class TextSmall extends StatelessWidget {
+class TextExtraSmall extends StatelessWidget {
   final String? text;
   final String? keyName;
   final Color? color;
   final TextOverflow? overflow;
   final TextAlign? textAlign;
 
-  const TextSmall({
+  const TextExtraSmall({
     this.text,
     super.key,
     this.color,
@@ -25,8 +25,8 @@ class TextSmall extends StatelessWidget {
       text ?? '',
       style: TextStyle(
         color: color ?? AppColors.white,
-        fontSize: 14.sp,
-      ).lineHeight(18.sp),
+        fontSize: 10.sp,
+      ).lineHeight(15.sp),
       overflow: overflow ?? TextOverflow.ellipsis,
       textAlign: textAlign ?? TextAlign.justify,
       maxLines: 2,

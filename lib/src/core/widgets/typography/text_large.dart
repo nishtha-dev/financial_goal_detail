@@ -1,16 +1,16 @@
-import 'package:financial_goal_detail/src/core/constants/colors.dart';
+import 'package:financial_goal_detail/src/core/constants/app_colors.dart';
 import 'package:financial_goal_detail/src/core/theme/app_style_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class TextLarge extends StatelessWidget {
+class TextLargeBold extends StatelessWidget {
   final String? text;
   final String? keyName;
   final Color? color;
   final TextOverflow? overflow;
   final TextAlign? textAlign;
 
-  const TextLarge({
+  const TextLargeBold({
     this.text,
     super.key,
     this.color,
@@ -23,8 +23,11 @@ class TextLarge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text ?? '',
-      style: TextStyle(color: color ?? AppColors.white, fontSize: 20.sp)
-          .lineHeight(30.62.sp),
+      style: TextStyle(
+              color: color ?? AppColors.white,
+              fontSize: 28.sp,
+              fontWeight: FontWeight.w700)
+          .lineHeight(42.sp),
       overflow: overflow ?? TextOverflow.ellipsis,
       textAlign: textAlign ?? TextAlign.justify,
     );

@@ -1,4 +1,4 @@
-import 'package:financial_goal_detail/src/core/constants/colors.dart';
+import 'package:financial_goal_detail/src/core/constants/app_colors.dart';
 import 'package:financial_goal_detail/src/core/theme/app_style_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +9,7 @@ class TextMedium extends StatelessWidget {
   final Color? color;
   final TextOverflow? overflow;
   final TextAlign? textAlign;
-
+  final FontWeight? fontWeight;
   const TextMedium({
     this.text,
     super.key,
@@ -17,6 +17,7 @@ class TextMedium extends StatelessWidget {
     this.keyName,
     this.overflow,
     this.textAlign,
+    this.fontWeight,
   }) : assert(text != null || keyName != null);
 
   @override
@@ -24,9 +25,10 @@ class TextMedium extends StatelessWidget {
     return Text(
       text ?? '',
       style: TextStyle(
-        color: color ?? AppColors.white,
-        fontSize: 14,
-      ).lineHeight(21.sp),
+              color: color ?? AppColors.white,
+              fontSize: 20,
+              fontWeight: fontWeight)
+          .lineHeight(30.sp),
       overflow: overflow ?? TextOverflow.ellipsis,
       textAlign: textAlign ?? TextAlign.justify,
     );
