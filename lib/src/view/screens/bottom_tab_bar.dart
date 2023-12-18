@@ -12,7 +12,7 @@ class BottomTabBar extends StatefulWidget {
 }
 
 class _BottomTabBarState extends State<BottomTabBar> {
-  int selectedIndexValue = 0;
+  int selectedIndexValue = 2;
   static const List<Widget> _pages = <Widget>[
     SizedBox(),
     SizedBox(),

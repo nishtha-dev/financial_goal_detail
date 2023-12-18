@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 class TabItemModel {
   TabItemModel({
     required this.icon,
-    required this.title,
-    required this.route,
+    required this.label,
   });
 
-  final String title;
   final Widget icon;
 
-  final String route;
+  final String label;
 }

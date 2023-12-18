@@ -1,4 +1,5 @@
-import 'package:financial_goal_detail/src/model/tab_bar_model.dart';
+import 'package:financial_goal_detail/src/core/constants/constants.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,56 +13,35 @@ class BottomTabBarView extends StatefulWidget {
 }
 
 class _BottomTabBarViewState extends State<BottomTabBarView> {
-  final List<TabItemModel> bottomTabs = [
-    TabItemModel(
-      icon: const Icon(Icons.home),
-      title: 'Home',
-      route: '',
-    ),
-    TabItemModel(
-      icon: const Icon(Icons.sync),
-      title: 'Data Sync',
-      route: '',
-    ),
-    TabItemModel(
-      icon: const Icon(Icons.headphones),
-      title: 'Book',
-      route: '',
-    ),
-    TabItemModel(
-      icon: const Icon(Icons.settings),
-      title: 'Idea',
-      route: '',
-    ),
-  ];
-
   List<BottomNavigationBarItem> _buildItems() {
     return <BottomNavigationBarItem>[
-      for (int i = 0; i < bottomTabs.length; i++)
+      for (int i = 0; i < AppConstants.bottomTabs.length; i++)
         BottomNavigationBarItem(
-          icon: SizedBox.square(
-            dimension: 25.sp,
-            child: bottomTabs[i].icon,
-          ),
-          label: bottomTabs[i].title,
-        ),
+            icon: SizedBox.square(
+              dimension: 30.sp,
+              child: AppConstants.bottomTabs[i].icon,
+            ),
+            label: AppConstants.bottomTabs[i].label),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
       elevation: 15.0,
+      iconSize: 30,
       items: _buildItems(),
       currentIndex: widget.selectedIndex,
       type: BottomNavigationBarType.fixed,
-      // backgroundColor: context.fpTheme.background.zero,
-      // selectedItemColor: context.fpTheme.red.zero,
-      // selectedLabelStyle: context.fpTheme.medium.minusThree,
-      // unselectedItemColor: context.fpTheme.background.fiveHalf,
-      // unselectedLabelStyle: context.fpTheme.medium.minusThree,
+      backgroundColor: AppColors.white,
+      selectedItemColor: AppColors.darkBlue,
+      unselectedItemColor: AppColors.darkGrey,
       onTap: (int currentIndex) {
-        widget.onTap(currentIndex);
+        if (currentIndex == 2) {
+          widget.onTap(currentIndex);
+        }
       },
     );
   }
